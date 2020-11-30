@@ -3,13 +3,7 @@ const { v4: uuid } = require('uuid');
 const logger = require('../logger');
 const cardRouter = express.Router();
 const bodyParser = express.json();
-
-// storage array for cards
-const cards = [{
-    id: 1,
-    title: 'Task One',
-    content: 'This is card one'
-}];
+const { cards, lists } = require('../store');
 
 cardRouter
     .route('/card')
